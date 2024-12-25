@@ -1,35 +1,46 @@
+import java.util.Scanner;
+
 abstract class Compte {
     private int number;
-    private double salaire;
     private String propietaire;
+    private long soldeinitial;
+    private String type;
 
-    public Compte(int num,double salaire,String propietaire){
+
+    public Compte(int num,String propietaire,long soldeinitial){
         this.number=number;
         this.propietaire=propietaire;
-        this.salaire=salaire;
+        this.soldeinitial=soldeinitial;
     }
 
     public int getNum() {
         return number;
     }
-
     public void setNum(int number) {
         this.number = number;
-    }
-
-    public double getSalaire() {
-        return salaire;
-    }
-
-    public void setSalaire(double salaire) {
-        this.salaire = salaire;
     }
 
     public String getPropietaire() {
         return propietaire;
     }
-
     public void setPropietaire(String propietaire) {
         this.propietaire = propietaire;
     }
+
+    public long getSoldeinitial() {
+        return soldeinitial;
+    }
+
+    public void setSoldeinitial(long soldeinitial) {
+        this.soldeinitial = soldeinitial;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
 }
