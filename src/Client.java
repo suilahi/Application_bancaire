@@ -81,6 +81,14 @@ public class Client {
         clients.add(client);
         System.out.println("client ajouter avec succées");
     }
+    public void afficherlisteclient(){
+        if (clients.isEmpty()){
+            System.out.println("aucun client trouvé!!");
+        }
+        for (Client client:clients){
+            System.out.println(clients);
+        }
+    }
 
     public void gestiondeclient() {
         int choix;
