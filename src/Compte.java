@@ -42,5 +42,18 @@ abstract class Compte {
     public void setType(String type) {
         this.type = type;
     }
+    Scanner scanner=new Scanner(System.in);
+    public void créercompte(){
+        System.out.println("type de compte:épargne/courant:");
+        String type= scanner.nextLine();
+        scanner.nextLine();
+        System.out.println("solde initial:");
+        double salaire=scanner.nextDouble();
+        scanner.nextLine();
+        System.out.println("numéro de compte:");
+        long numero=scanner.nextLong();
+        scanner.nextLine();
+        System.out.println("compte crée avec succés");
 
+    }
 }
