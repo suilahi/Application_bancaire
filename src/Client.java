@@ -48,12 +48,7 @@ public class Client {
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
     }
-    public static boolean ValidationNum(String Num){
-        String rejex ="([\w_-]{1,30}@ \w{1,10}\.\w{1,3})$";
-        Pattern pattern = Pattern.compile(rejex);
-        Matcher matcher = pattern.matcher(Num);
-        return matcher.matches();
-    }
+
     public Client(){}
     public void ajouterclient() {
         System.out.println("Entrer le nom:");
@@ -70,13 +65,6 @@ public class Client {
         } while (!validationemail(email));
         System.out.println("Entrer l'Adresse:");
         String adresse = sc.nextLine();
-        do {
-            System.out.println("Entrer Numero de Telephone::");
-            String NumTele = sc.nextLine();
-            if (!ValidationNum(NumTele)) {
-                System.out.println("Num invalide.veuillez ressayer");
-            }
-        }while (!ValidationNum(NumTele));
         Client client=new Client(nom,prenom,email,adresse,NumTele);
         clients.add(client);
         System.out.println("client ajouter avec succées");
