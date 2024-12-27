@@ -4,6 +4,7 @@ abstract class Compte {
     private long numeroCompte;
     private Client propietaire;
     private double soldeinitial;
+    private double soldeActuelle;
     private String type;
 
     public Compte(long numeroCompte, Client propietaire, double soldeinitial) {
@@ -15,6 +16,14 @@ abstract class Compte {
     public Compte(long numeroCompte,double soldeinitial){
         this.numeroCompte=numeroCompte;
         this.soldeinitial=soldeinitial;
+    }
+        //getter and setter
+    public double getSoldeActuelle() {
+        return soldeActuelle;
+    }
+
+    public void setSoldeActuelle(double soldeActuelle) {
+        this.soldeActuelle = soldeActuelle;
     }
 
     public long getNum() {
@@ -37,7 +46,7 @@ abstract class Compte {
         return soldeinitial;
     }
 
-    public void setSoldeinitial(long soldeinitial) {
+    public void setSoldeinitial(double soldeinitial) {
         this.soldeinitial = soldeinitial;
     }
 
@@ -78,10 +87,10 @@ abstract class Compte {
                     int choixCompte= sc.nextInt();
                     switch (choixCompte){
                         case 1:
-                            compteCourant.creercompte();
+                            compteCourant.CreerCompte();
                             break;
                         case 2:
-                            compteEpargne.creercompte();
+                            compteEpargne.CreerCompte();
                             break;
                     }
                     break;
@@ -102,11 +111,11 @@ abstract class Compte {
             }
         } while (choix != 3);
     }
-    abstract  public void creercompte();
+    abstract  public void CreerCompte();
 
     public Client RechercheClientIdExiste(int idClient){
         for (Client client : Client.clients){
-            if (idClient==Client.getId()){
+            if (idClient==client.getId()){
                 return client;
             }
         }

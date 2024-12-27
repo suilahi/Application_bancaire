@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class CompteCourant extends Compte{
     private double fraisbancaire;
-    public static ArrayList<CompteCourant>Comptecourant=new ArrayList<>();
+    public static ArrayList<CompteCourant>Comptecourants=new ArrayList<>();
     static Scanner scanner=new Scanner(System.in);
 
     public CompteCourant(long numero ,Client propietaire, double soldeinitial, double fraisbancaire){
@@ -16,7 +16,7 @@ public class CompteCourant extends Compte{
         this.fraisbancaire=fraisbancaire;
     }
     @Override
-    public void creercompte() {
+    public void CreerCompte() {
         System.out.println("entrer l'id du client:");
         int idClient = scanner.nextInt();
         scanner.nextLine();
@@ -29,21 +29,21 @@ public class CompteCourant extends Compte{
             double soldeinitial = scanner.nextDouble();
             scanner.nextLine();
             CompteCourant compteCourant = new CompteCourant(numero, soldeinitial, fraisbancaire);
-            Comptecourant.add(compteCourant);
+            Comptecourants.add(compteCourant);
             System.out.println("compte crée avec succés");
         } else {
             System.out.println("client introuvable!!");
         }
     }
         public  void afficherComptes() {
-            if (Comptecourant.isEmpty()) {
+            if (Comptecourants.isEmpty()) {
                 System.out.println("Aucun compte courant trouvé !");
                 return;
             }
 
             System.out.println("Liste des comptes courants :");
-            for (CompteCourant compte : Comptecourant) {
-                System.out.println(compte);
+            for (CompteCourant compte : Comptecourants) {
+                System.out.println(Comptecourants);
             }
         }
 

@@ -19,7 +19,7 @@ public class CompteEpargne extends Compte {
     public CompteEpargne() {}
 
     @Override
-    public void creercompte() {
+    public void CreerCompte() {
         System.out.println("entrer l'id du client:");
         int idClient = scanner.nextInt();
         scanner.nextLine();
