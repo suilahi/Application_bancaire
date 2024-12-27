@@ -4,11 +4,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Client {
-    private int id;
+    static int id;
     private String nom, prenom, Email, adresse;
     private long NumTele;
-    Scanner sc = new Scanner(System.in);
-    private ArrayList<Client> clients = new ArrayList<>();
+    static Scanner sc = new Scanner(System.in);
+    static ArrayList<Client> clients = new ArrayList<>();
 
     public Client(int id, String nom, String prenom, String Email, String adresse, long NumTele) {
         this.id = id;
@@ -22,7 +22,7 @@ public class Client {
     @Override
     public String toString() {
 
-        return "Client{" +
+        return "{"+
                 "\n id=" + id +
                 "\n nom='" + nom + '\'' +
                 "\n  prenom='" + prenom + '\'' +
@@ -33,7 +33,7 @@ public class Client {
 
     }
 
-    public int getId() {
+    static int getId() {
         return id;
     }
     public String getNom() {
@@ -51,6 +51,7 @@ public class Client {
     public long getNumTele() {
         return NumTele;
     }
+
     public static boolean validationemail(String email) {
         String emailRegex = "^[A-Za-z0-9._%+-]+@[A-Za-z]+\\.[A-Za-z]{2,6}$";
         Pattern pattern = Pattern.compile(emailRegex);
@@ -103,7 +104,7 @@ public class Client {
                     ajouterclient();
                     break;
                 case 2:
-
+                    afficherlisteclient();
                     break;
                 case 3:
                     System.out.println("vous avez choisi le retour au menu principal");

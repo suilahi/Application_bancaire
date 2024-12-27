@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
 public class Main {
-    Scanner scanner=new Scanner(System.in);
     public static void main(String[] args) {
         int choix = 0;
         Scanner scanner=new Scanner(System.in);
         Client client=new Client();
+        CompteCourant compteCourant=new CompteCourant();
 
         do {
             System.out.println("menu principal");
@@ -17,11 +17,13 @@ public class Main {
             choix = scanner.nextInt();
             switch (choix){
                 case 1:
-
+                    compteCourant.gestiondecompte();
+                    break;
                 case 2:
                     client.gestiondeclient();
                     break;
                 case 3:
+
                     break;
                 case 4:
                     break;
