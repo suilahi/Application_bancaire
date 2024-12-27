@@ -59,15 +59,7 @@ abstract class Compte {
                 '}';
     }
 
-    public Client RechercheClientIdExiste(int idClient){
-        for (Client client : Client.clients){
-            if (idClient==Client.getId()){
-                return client;
-            }
-        }
-        System.out.println("client introuvable");
-        return null;
-    }
+
 
     public void gestiondecompte() {
         int choix;
@@ -112,5 +104,13 @@ abstract class Compte {
     }
     abstract  public void creercompte();
 
-
+    public Client RechercheClientIdExiste(int idClient){
+        for (Client client : Client.clients){
+            if (idClient==Client.getId()){
+                return client;
+            }
+        }
+        System.out.println("client introuvable");
+        return null;
+    }
 }
