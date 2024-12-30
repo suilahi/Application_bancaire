@@ -6,35 +6,6 @@ public class Operations {
     public static ArrayList<CompteCourant> comptesCourants = new ArrayList<>();
     private ArrayList<String> historique = new ArrayList<>(); // Historique des opérations
 
-    // Méthode pour effectuer un dépôt
-    public void effectuerDepot() {
-        System.out.println("Entrez le numéro du compte pour effectuer le dépôt :");
-        long numeroCompte = scanner.nextLong();
-        scanner.nextLine();
-        CompteCourant compteTrouve = null;
-        for (CompteCourant compte : comptesCourants) {
-            if (compte.getNum() == numeroCompte) {
-                compteTrouve = compte;
-                break;
-            }
-        }
-        if (compteTrouve != null) {
-            System.out.println("Montant à déposer :");
-            double montant = scanner.nextDouble();
-            scanner.nextLine();
-            if (montant > 0) {
-                double nouveauSolde = compteTrouve.getSoldeinitial() + montant;
-                compteTrouve.setSoldeinitial(nouveauSolde);
-                historique.add("Dépôt de " + montant + " sur le compte " + numeroCompte);
-                System.out.println("Dépôt effectué avec succès ! Nouveau solde : " + nouveauSolde);
-            } else {
-                System.out.println("Montant invalide. Le dépôt doit être supérieur à zéro.");
-            }
-        } else {
-            System.out.println("Compte introuvable !");
-        }
-    }
-
     // Méthode pour effectuer un retrait
     public void effectuerRetrait() {
         System.out.println("Entrez le numéro du compte pour effectuer le retrait :");
@@ -65,6 +36,36 @@ public class Operations {
             System.out.println("Compte introuvable !");
         }
     }
+
+    // Méthode pour effectuer un dépôt
+    public void effectuerDepot() {
+        System.out.println("Entrez le numéro du compte pour effectuer le dépôt :");
+        long numeroCompte = scanner.nextLong();
+        scanner.nextLine();
+        CompteCourant compteTrouve = null;
+        for (CompteCourant compte : comptesCourants) {
+            if (compte.getNum() == numeroCompte) {
+                compteTrouve = compte;
+                break;
+            }
+        }
+        if (compteTrouve != null) {
+            System.out.println("Montant à déposer :");
+            double montant = scanner.nextDouble();
+            scanner.nextLine();
+            if (montant > 0) {
+                double nouveauSolde = compteTrouve.getSoldeinitial() + montant;
+                compteTrouve.setSoldeinitial(nouveauSolde);
+                historique.add("Dépôt de " + montant + " sur le compte " + numeroCompte);
+                System.out.println("Dépôt effectué avec succès ! Nouveau solde : " + nouveauSolde);
+            } else {
+                System.out.println("Montant invalide. Le dépôt doit être supérieur à zéro.");
+            }
+        } else {
+            System.out.println("Compte introuvable !");
+        }
+    }
+
 
 
     // Méthode de gestion des opérations

@@ -24,7 +24,7 @@ public class Main {
                     compteCourant.gestiondecompte();
                     break;
                 case 3:
-                    operations.gestiondesoperations();
+                    operations.gestionDesOperations();
                     break;
                 case 4:
                     break;
